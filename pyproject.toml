@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nbody_project"
+version = "0.1.0"
+description = "N-Body Engine"
+authors = [
+    { name="CGN" }
+]
+readme = "README.md"
+requires-python = ">=3.10"
+
+dependencies = [
+    "torch",
+    "torchvision",
+    "pydantic",
+    "pyyaml"
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+nbody_engine = ["settings.yaml"]
+
+[project.scripts]
+nbody = "nbody_engine.main:main"
